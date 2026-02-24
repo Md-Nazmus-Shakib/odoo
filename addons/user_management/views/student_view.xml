@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  
+  <record id="user_form_view" model="ir.ui.view">
+    <field name="name">User</field>
+    <field name="model">user_info</field>
+    
+    <field name="arch" type="xml">
+      <form string="User Data" name="User Data">
+         <header>
+               <group>    <!-- Your custom button -->
+                    <!-- <button name="save_action" type="object" string="Save" class="oe_highlight"/> -->
+                   <button name="save_action" type="object" class="btn btn-success" string="Save" confirm="Are you sure you want to save this record?"/>
+                    <!-- <button name="show_email_template_wizard" type="object" class="btn btn-success" string="email"/> -->
+                    <!-- Other header elements like statusbar, etc. -->
+                     </group> 
+          </header>
+        <sheet>
+          <group>
+            <field name="name" />
+            <field name="email" />
+            <field name="password" password="True"/>
+             <!-- <field name="confirm password" password="True"/> --> <!--field must be in db-->
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+  
+  <record id="user_list_view" model="ir.ui.view">
+    <field name="name">All user</field>
+    <field name="model">user_info</field>
+    <field name="arch" type="xml">
+      <list string="All User Data">
+        
+        <field name="name" />
+        <field name="email" />
+        <field name="password" password="True" />
+        <button name="unlinkk" string="Delete" type="object" class="btn btn-danger" confirm="Are you want to delete this record?"/>
+
+
+      </list>
+    </field>
+  </record>
+   <record id="user_view_action" model="ir.actions.act_window">
+    <field name="name">All user</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">user_info</field>
+    <field name="view_mode">list,form</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">please enter student information here</p>
+    </field>
+  </record>
+
+
+</odoo>

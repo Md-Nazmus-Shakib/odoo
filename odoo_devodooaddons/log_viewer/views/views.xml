@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="log_viewer.list">
+      <field name="name">log_viewer list</field>
+      <field name="model">log_viewer.log_viewer</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </list>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="log_viewer.action_window">
+      <field name="name">log_viewer window</field>
+      <field name="res_model">log_viewer.log_viewer</field>
+      <field name="view_mode">list,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="log_viewer.action_server">
+      <field name="name">log_viewer server</field>
+      <field name="model_id" ref="model_log_viewer_log_viewer"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "list,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="log_viewer" id="log_viewer.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="log_viewer.menu_1" parent="log_viewer.menu_root"/>
+    <menuitem name="Menu 2" id="log_viewer.menu_2" parent="log_viewer.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="log_viewer.menu_1_list" parent="log_viewer.menu_1"
+              action="log_viewer.action_window"/>
+    <menuitem name="Server to list" id="log_viewer" parent="log_viewer.menu_2"
+              action="log_viewer.action_server"/>
+-->
+  </data>
+</odoo>

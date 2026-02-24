@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <menuitem id="um_root" name="UMS" sequence="0"/>
+  <menuitem id="um_menue" name="User" parent="um_root" sequence="1"/>
+  <menuitem id="all_user_menue" name="All user" parent="um_menue" action="user_management.user_view_action" sequence="1"/>
+
+</odoo>

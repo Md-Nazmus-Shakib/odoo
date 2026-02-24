@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    
+    <record id="email_template_shakib" model="mail.template">
+        <field name="name">Data Delete Notification</field>
+        <field name="model_id" ref='user_management.model_user_info'/>
+        <field name="subject">{{object.name}} your data is deleted</field>
+        <field name="email_from">khan35-998@diu.edu.bd</field>
+        <field name="email_to">{{object.email}}</field>
+        <field name="body_html" type="html">
+            
+                <p>Hello <t t-out="object.name"/>,</p>
+                <p>Your user data will be deleted. For any further querries fell free to reach our technical team.</p>
+                <p>Regards,</p>
+                <p>Prime Tech Solutions Ltd</p>
+                <p>Dhaka, Bangladesh</p>
+            
+        </field> 
+    </record>
+</odoo>
