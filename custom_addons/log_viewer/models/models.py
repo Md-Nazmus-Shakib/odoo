@@ -14,7 +14,3 @@ class logmodel(models.Model):
         'res_id': template_id,   # This opens existing template
         'target': 'current',
     }
-
-
-
-

@@ -32,4 +32,3 @@
     'installable': True,
     'application': True,
 }
-
