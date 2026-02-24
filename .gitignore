@@ -23,9 +23,9 @@ odoo/filestore
 # maintenance migration scripts
 odoo/addons/base/maintenance
 # windows installation config file
-odoo/odoo.conf
-odoo/odoo_devodoonew_odoo.conf
-odoo/debian/odoo.conf
+odoo/odoo.conf/
+odoo/odoo_devodoonew_odoo.conf/
+odoo/debian/odoo.conf/
 # generated for windows installer?
 install/win32/*.bat
 install/win32/meta.py
