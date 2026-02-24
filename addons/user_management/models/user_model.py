@@ -53,24 +53,7 @@ class User(models.Model):
     #     return template.send_mail(self.id)
     def unlinkk(self):
         log_time=datetime.now()
-        # s = smtplib.SMTP('smtp.gmail.com', 587)
-        # # start TLS for security
-        # s.starttls()
-        # # Authentication
-        # s.login("khan35-998@diu.edu.bd", "xcfh upcm fzmu xatm")
-        # # message to be sent
-        # # message = "Your data is deleted..."
-        # message = email_template.Message(self.name)
-        # # sending the mail
-        # s.sendmail("khan35-998@diu.edu.bd", self.email, message)
-        # # terminating the session
-        # s.quit()
-        # self.env.cr.execute(
-            
-            
-        #              "INSERT INTO log_log(log_description,log_time) VALUES(%s,%s)",
-        #             ("A  user deleted.",log_time)
-        #                     )
+        
         
         template = self.env.ref('user_management.email_template_shakib')
         # print(self.id.email)
