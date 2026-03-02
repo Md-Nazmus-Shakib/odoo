@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 acess_log_viewer_logmodel,manage_log_viewer,model_log_log,,1,0,0,0
+access_google_search_result,manage_google_search_result,model_google_search_result,,1,1,1,1

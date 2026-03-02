@@ -233,9 +233,11 @@ def _get_login_redirect_url(uid, redirect=None):
     fully logged and can proceed to the requested URL
     """
     if request.session.uid:  # fully logged
-        return redirect or ('/odoo' if is_user_internal(request.session.uid)
-                            else '/web/login_successful')
-
+        # return redirect or ('/odoo/apps' if is_user_internal(request.session.uid)
+        #                     else '/web/login_successful')
+        if is_user_internal(request.session.uid):
+            return '/odoo/apps'
+        return redirect or '/web/login_successful'
     # partial session (MFA)
     url = request.env(user=uid)['res.users'].browse(uid)._mfa_url()
     if not redirect:

@@ -5,10 +5,12 @@
     <field name="name">log_log_list_view</field>
     <field name="model">log_log</field>
     <field name="arch" type="xml">
+      
       <list create="false" string="All User Data">
         <field name="log_time"/>
         <field name="log_description"/>
       </list>
+      
     </field>
   </record>
 
@@ -19,19 +21,51 @@
     <field name="help" type="html">
       <p class="oe_view_nocontent_create">Hello!</p>
     </field>
+     
   </record>
+ 
 
-  <!-- Server action to open/send email templates -->
+  <!-- Server action to open email templates -->
   <record id="email_server_action" model="ir.actions.server">
     <field name="name">Email Templates</field>
     <field name="type">ir.actions.server</field>
     <field name="model_id" ref="model_log_log"/>
     <field name="state">code</field>
-    <field name="code"> action = model.show_email_template_wizard()</field>
+    <field name="code"> action = model.show_email_template()</field>
+  </record>
+  <!--google search-->
+  <record id="google_search_bar_form" model="ir.ui.view">
+        <field name="name">Search_bar</field>
+        <field name="model">google_search_result</field>
+        <field name="arch" type="xml">
+            <form string="Google Search">
+              <sheet>
+                <group>
+                    <field name="keyword"
+                           placeholder="Enter keyword..."
+                           />
+                </group>
+              </sheet>
+                <div>
+                    <button string="Search"
+                            name="google_search"
+                            type="object"
+                            class="btn-primary"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+  <record id="action_google_search" model="ir.actions.act_window">
+    <field name="name">Google Search</field>
+    <field name="res_model">google_search_result</field>
+    <field name="view_mode">form</field>
+    <field name="target">current</field>
   </record>
 
-  <menuitem id="user_log_view_root" name="Logs" sequence="0"/>
+  <menuitem id="user_log_view_root" name="Logs" sequence="1"/>
   <menuitem id="log_menue" name="All Logs" parent="user_log_view_root" action="log_view_action" sequence="1"/>
   <menuitem id="email_menue" name="Email Template" parent="user_log_view_root" action="email_server_action" sequence="2"/>
+  <menuitem id="menu_google_search" name="Google Search" parent="user_log_view_root" action="action_google_search" sequence="3"/>
 
 </odoo>
