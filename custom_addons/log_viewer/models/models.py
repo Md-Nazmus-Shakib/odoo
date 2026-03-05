@@ -17,7 +17,7 @@ class logmodel(models.Model):
         'res_id': template_id,   # This opens existing template
         'target': 'current',
     }
-class GoogleSearchResult(models.Model):
+class GoogleSearchResult(models.TransientModel):
     _name = 'google_search_result'
     _description = 'Google Search Result'
     
